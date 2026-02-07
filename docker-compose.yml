@@ -1,0 +1,14 @@
+services:
+  database:
+    container_name: nozzle-database
+    image: postgres:latest
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=nozzle
+    volumes:
+      - nozzle-database:/var/lib/postgresql/
+volumes:
+  nozzle-database:

@@ -1,3 +1,9 @@
 .DS_Store
 node_modules
 .env
+/generated/prisma
+
+# Snyk Security Extension - AI Rules (auto-generated)
+.github/instructions/snyk_rules.instructions.md
+
+/generated/prisma
