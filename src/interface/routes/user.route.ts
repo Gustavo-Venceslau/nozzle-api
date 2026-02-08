@@ -4,5 +4,5 @@ import { CreateUserController } from "../controllers/user/create-user-controller
 const createUserController = new CreateUserController();
 
 export async function userRoutes(fastify: FastifyInstance) {
-  fastify.post("/", createUserController.handle)
+  fastify.post("/", (request, reply) => createUserController.handle(request, reply))
 }

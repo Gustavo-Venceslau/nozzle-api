@@ -13,7 +13,7 @@ export class CreateUserController {
   async handle(request: FastifyRequest, reply: FastifyReply): Promise<FastifyReply> {
     try {
       const body = request.body as CreateUserRequest;
-      const validatedBody = this.validateRequestBody(body);
+      const validatedBody = CreateUserController.validateRequestBody(body);
 
       const user = await this.createUserUseCase.execute(validatedBody);
 
@@ -23,7 +23,7 @@ export class CreateUserController {
     }
   }
 
-  private validateRequestBody(body: CreateUserRequest): CreateUserRequest {
+  private static validateRequestBody(body: CreateUserRequest): CreateUserRequest {
     return createUserSchema.parse(body);
   }
 }
